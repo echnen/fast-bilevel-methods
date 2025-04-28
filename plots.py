@@ -42,7 +42,7 @@ def plot_nemirovsky(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     plt.loglog(range(maxit), [1 / (k + 1) ** 2 for k in range(maxit)], '--', alpha=.4, color='k')
 
     plt.xlim(1, maxit)
-    plt.ylabel(r'$F(x^k) - \min F$')
+    plt.ylabel(r'$F(x_k) - \min F$')
     plt.xlabel(r'Iteration number $(k)$')
     plt.grid()
     plt.legend()
@@ -90,7 +90,7 @@ def plot_nemirovsky(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     plt.xlim(1e1, maxit)
     plt.ylim(1, 50000)
 
-    plt.ylabel(r'$\|x^k - x^*\|^2$')
+    plt.ylabel(r'$\|x_k - x^*\|^2$')
     plt.xlabel(r'Iteration number $(k)$')
     plt.grid()
     plt.savefig('results/exp_nemirovsky_res.pdf', bbox_inches='tight')
@@ -204,7 +204,7 @@ def plot_logistic(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     # plt.loglog(gmean(Res_Bi_SG_II, axis=1), color='b', linewidth=3, label='Bi-SG-II')
 
     plt.xlim(1, maxit)
-    plt.ylabel(r'$\|x^{k + 1} - x^{k}\|^2$')
+    plt.ylabel(r'$\|x_{k + 1} - x_{k}\|^2$')
     plt.xlabel(r'Iteration number $(k)$')
     plt.grid()
     plt.savefig('results/exp_logistic_res.pdf', bbox_inches='tight')
@@ -226,7 +226,7 @@ def plot_logistic(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     plt.loglog(range(maxit), [1e3 / (k + 1) ** 1.9 for k in range(maxit)], '--', alpha=0.4, color='k')
 
     plt.xlim(1e2, maxit - int(maxit * 2 / 10))
-    plt.ylabel(r'$f(x^k) - \min f$')
+    plt.ylabel(r'$f(x_k) - \min f$')
     plt.xlabel(r'Iteration number $(k)$')
     plt.grid()
     plt.legend()

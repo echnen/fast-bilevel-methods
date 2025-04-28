@@ -1,8 +1,36 @@
 # -*- coding: utf-8 -*-
+#
+#    Copyright (C) 2025 Radu Ioan Bot (radu.bot@univie.ac.at)
+#                       Enis Chenchene (enis.chenchene@univie.ac.at)
+#                       Robert Csetnek (robert.csetnek@univie.ac.at)
+#                       David Hulett (david.hulett@univie.ac.at)
+#
+#    This file is part of the example code repository for the paper:
+#
+#      A. Akerman, E. Chenchene, P. Giselsson, E. Naldi.
+#      Splitting the Forward-Backward Algorithm: A Full Characterization.
+#      2025. DOI: 10.48550/arXiv.2504.10999.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-Created on Sun Mar  9 13:10:43 2025
+This file contains the numerical experiments in:
 
-@author: enisc
+A. Akerman, E. Chenchene, P. Giselsson, E. Naldi.
+Splitting the Forward-Backward Algorithm: A Full Characterization.
+2025. DOI: 10.48550/arXiv.2504.10999.
+
+For any comment, please contact: enis.chenchene@gmail.com
 """
 
 import numpy as np
@@ -135,8 +163,9 @@ def experiment_logistic():
                                                              maxit)
 
 
-    # show.plot_logistic(Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
-    #                     Obj_biFI, Obj_FBi_PG, Obj_staBiM, Obj_Bi_SG_II, maxit)
+    show.plot_logistic(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
+                      Obj_Bi_PG, Obj_biFI, Obj_FBi_PG, Obj_staBiM, Obj_Bi_SG_II,
+                      Obj_H_Bi_PG, Obj_H_biFI, Obj_H_FBi_PG, Obj_H_staBiM, Obj_H_Bi_SG_II, maxit)
 
     return (Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
             Obj_Bi_PG, Obj_biFI, Obj_FBi_PG, Obj_staBiM, Obj_Bi_SG_II,
