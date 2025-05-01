@@ -24,8 +24,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-This file contains useful functions to run all numerical experiments in Section
-5 of:
+Run this file to reproduce all numerical experiments in:
 
 R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
 Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
@@ -34,61 +33,15 @@ Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
 For any comment, please contact: enis.chenchene@gmail.com
 """
 
-import numpy as np
+import pathlib
+import experiments as expm
 
+if __name__ == "__main__":
 
-def prox_norm_ell_2(tau, w):
+    pathlib.Path("results").mkdir(parents=True, exist_ok=True)
 
-    norm = np.linalg.norm(w)
+    print('Starting experiment in Section 5.2 ...')
+    expm.experiment_nemirovisky()
 
-    if norm <= 1e-9:
-        return w
-    else:
-        return max(0, 1 - tau / norm) * w
-
-
-def prox_norm_ell_1(tau, w):
-
-    return np.sign(w) * np.maximum(np.abs(w) - tau, 0)
-
-
-def prox_norm_ell_2_tilted(tau, w, tilt):
-    '''
-    computes the proximity operator of |w - tilt|_2
-    '''
-
-    return tilt + prox_norm_ell_2(tau, w - tilt)
-
-
-def prox_norm_ell_1_tilted(tau, w, tilt):
-    '''
-    computes the proximity operator of |w - tilt|_1
-    '''
-
-    return tilt + prox_norm_ell_1(tau, w - tilt)
-
-
-def _positive_sigmoid(x):
-
-    return 1 / (1 + np.exp(-x))
-
-
-def _negative_sigmoid(x):
-
-    exp = np.exp(x)
-
-    return exp / (exp + 1)
-
-
-def sigmoid(x):
-
-    positive = x >= 0
-    # boolean array inversion is faster than another comparison
-    negative = ~positive
-
-    # empty contains juke hence will be faster to allocate than zeros
-    result = np.empty_like(x)
-    result[positive] = _positive_sigmoid(x[positive])
-    result[negative] = _negative_sigmoid(x[negative])
-
-    return result
+    print('Starting experiment in Section 5.3 ...')
+    expm.experiment_logistic()

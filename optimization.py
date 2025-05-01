@@ -1,8 +1,37 @@
 # -*- coding: utf-8 -*-
+#
+#    Copyright (C) 2025 Radu Ioan Bot (radu.bot@univie.ac.at)
+#                       Enis Chenchene (enis.chenchene@univie.ac.at)
+#                       Robert Csetnek (robert.csetnek@univie.ac.at)
+#                       David Hulett (david.hulett@univie.ac.at)
+#
+#    This file is part of the example code repository for the paper:
+#
+#      R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
+#      Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
+#      2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-Created on Sun Mar  9 12:20:28 2025
+This file contains all implementations of the numerical methods used for
+comparison in Section 5 of:
 
-@author: enisc
+R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
+Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
+2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+
+For any comment, please contact: enis.chenchene@gmail.com
 """
 
 import numpy as np
@@ -98,7 +127,6 @@ def FBi_PG(x_init, alpha, s, c, delta, Model, maxit):
         Fs.append(Model.obj(x))
         Hs.append(Model.obj_outer(x))
 
-
     return Res, Fs, Hs
 
 
@@ -164,6 +192,5 @@ def Bi_SG_II(x_init, c, delta, Model, maxit):
         Res.append(Model.res(x, x_old))
         Fs.append(Model.obj(x))
         Hs.append(Model.obj_outer(x))
-
 
     return Res, Fs, Hs

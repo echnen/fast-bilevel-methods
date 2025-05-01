@@ -1,8 +1,37 @@
 # -*- coding: utf-8 -*-
+#
+#    Copyright (C) 2025 Radu Ioan Bot (radu.bot@univie.ac.at)
+#                       Enis Chenchene (enis.chenchene@univie.ac.at)
+#                       Robert Csetnek (robert.csetnek@univie.ac.at)
+#                       David Hulett (david.hulett@univie.ac.at)
+#
+#    This file is part of the example code repository for the paper:
+#
+#      R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
+#      Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
+#      2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-Created on Sun Mar  9 11:40:25 2025
+This file contains useful functions to run the numerical experiment in Section
+5.3 of:
 
-@author: enisc
+R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
+Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
+2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+
+For any comment, please contact: enis.chenchene@gmail.com
 """
 
 import numpy as np
@@ -57,11 +86,9 @@ class Logistic_Regression:
         self.L_2 = np.linalg.norm(X_train.T @ X_train, 2) / self.m
         self.L_1 = 0
 
-
     def Prox(self, tau, eps_k, in_prox):
 
         return st.prox_norm_ell_1(tau * eps_k, in_prox)
-
 
     def Grad(self, eps_k, in_grad):
 
@@ -69,11 +96,9 @@ class Logistic_Regression:
 
         return 1 / self.m * (self.X_train.T @ (y_pred - self.y_train))
 
-
     def res(self, x, x_old):
 
         return np.sum((x - x_old) ** 2)
-
 
     def obj(self, x):
 
