@@ -1,8 +1,8 @@
-# Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization. Example code
+# Accelerating Diagonal Methods for Bilevel Optimization: Unified Convergence via Continuous-Time Dynamics. Example code
 
 This repository contains the experimental source code to reproduce the numerical experiments in:
 
-* R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett. Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization. 2025. [ArXiv preprint](https://arxiv.org/abs/XXXX.YYYY)
+* R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett. Accelerating Diagonal Methods for Bilevel Optimization: Unified Convergence via Continuous-Time Dynamics. 2025. [ArXiv preprint](https://arxiv.org/abs/2505.14389)
 
 To reproduce the results of the numerical experiments run:
 ```bash
@@ -14,8 +14,8 @@ If you find this code useful, please cite the above-mentioned paper:
 ```BibTeX
 @article{acgn25,
   author = {Bo\c{t}, Radu and Chenchene, Enis and Csetnek, Robert and Hulett, David},
-  title = {Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization},
-  pages = {XXXX.YYYYY},
+  title = {Accelerating Diagonal Methods for Bilevel Optimization: Unified Convergence via Continuous-Time Dynamics},
+  pages = {2505.14389},
   journal = {ArXiv},
   year = {2025}
 }

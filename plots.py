@@ -8,8 +8,9 @@
 #    This file is part of the example code repository for the paper:
 #
 #      R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
-#      Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
-#      2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+#      Accelerating Diagonal Methods for Bilevel Optimization:
+#      Unified Convergence via Continuous-Time Dynamics
+#      2025. DOI: 10.48550/arXiv.2505.14389.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -28,8 +29,9 @@ This file contains useful functions to plot the numerical experiments in
 Section 5.2 of:
 
 R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
-Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
-2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+Accelerating Diagonal Methods for Bilevel Optimization:
+Unified Convergence via Continuous-Time Dynamics.
+2025. DOI: 10.48550/arXiv.2505.14389.
 
 For any comment, please contact: enis.chenchene@gmail.com
 """
@@ -144,8 +146,8 @@ def plot_nemirovsky(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     # plotting objectives outer (second order)
     fig = plt.figure(figsize=(5, 5))
     cmap = LinearSegmentedColormap.from_list("WhiteBlue", [(0, 0, 0),
-                                                            (0, 0, 1),
-                                                            (0.5, 0.9, 1)])
+                                                           (0, 0, 1),
+                                                           (0.5, 0.9, 1)])
     norm = Normalize(np.min(Spects), np.max(Spects))
     sm = ScalarMappable(cmap=cmap, norm=norm)
     sm.set_array([])
@@ -171,8 +173,8 @@ def plot_nemirovsky(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     # plotting objectives inner (second order)
     fig = plt.figure(figsize=(5, 5))
     cmap = LinearSegmentedColormap.from_list("WhiteBlue", [(0, 0, 0),
-                                                            (0, 0, 1),
-                                                            (0.5, 0.9, 1)])
+                                                           (0, 0, 1),
+                                                           (0.5, 0.9, 1)])
     norm = Normalize(np.min(Spects), np.max(Spects))
     sm = ScalarMappable(cmap=cmap, norm=norm)
     sm.set_array([])
@@ -187,7 +189,8 @@ def plot_nemirovsky(Res_Bi_PG, Res_biFI, Res_FBi_PG, Res_staBiM, Res_Bi_SG_II,
     plt.ylabel(r'$F(x_k) - \min F$')
     plt.xlabel(r'Iteration number $(k)$')
     plt.grid()
-    plt.savefig('results/exp_nemirovsky_obj_inner_second_order.pdf', bbox_inches='tight')
+    plt.savefig('results/exp_nemirovsky_obj_inner_second_order.pdf',
+                bbox_inches='tight')
     plt.show()
 
 

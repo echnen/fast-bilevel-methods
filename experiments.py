@@ -8,8 +8,9 @@
 #    This file is part of the example code repository for the paper:
 #
 #      R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
-#      Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
-#      2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+#      Accelerating Diagonal Methods for Bilevel Optimization:
+#      Unified Convergence via Continuous-Time Dynamics
+#      2025. DOI: 10.48550/arXiv.2505.14389.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -27,8 +28,9 @@
 This file contains the numerical experiments in:
 
 R. I. Bot, E. Chenchene, R. Csetnek, D. Hulett.
-Flexible and Fast Diagonal Schemes for Simple Bilevel Optimization.
-2025. DOI: XX.YYYY/arXiv.XXXX.YYYYY.
+Accelerating Diagonal Methods for Bilevel Optimization:
+Unified Convergence via Continuous-Time Dynamics.
+2025. DOI: 10.48550/arXiv.2505.14389.
 
 For any comment, please contact: enis.chenchene@gmail.com
 """
@@ -41,7 +43,7 @@ import plots as show
 from tqdm import tqdm
 
 
-def experiment_nemirovisky():
+def experiment_nemirovsky():
 
     dim = 7
     J = 4
